@@ -1,0 +1,117 @@
+<template name="cadastro">
+
+    <div class="row">
+        <div class="col-sm-6 col-md-3 col-lg-3">
+            <div class="widget-bg-color-icon card-box">
+                <a href="#">
+                    <div class="modalProduto bg-icon bg-icon-pink pull-left">
+                        <i class="ion-plus text-pink"></i>
+                    </div>
+                </a>
+                <div class="text-right">
+                    <h3 class="text-dark"><b class="counter">{{countProduct}}</b></h3>
+                    <p class="text-muted">Produtos</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-3">
+            <div class="widget-bg-color-icon card-box">
+                <a href="#">
+                    <div class="modalSabores bg-icon bg-icon-pink pull-left">
+                        <i class="ion-plus text-pink"></i>
+                    </div>
+                </a>
+                <div class="text-right">
+                    <h3 class="text-dark"><b class="counter"></b></h3>
+                    <p class="text-muted">Sabores</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-3">
+            <div class="widget-bg-color-icon card-box">
+                <a href="#">
+                    <div class="modalEstoque bg-icon bg-icon-pink pull-left">
+                        <i class="ion-plus text-pink"></i>
+                    </div>
+                </a>
+                <div class="text-right">
+                    <h3 class="text-dark"><b class="counter"></b></h3>
+                    <p class="text-muted">Estoque</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            {{> EasySearch.Input index=productIndex attributes=attr}}
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-hover widget-bg-color-icon card-box">
+            <thead>
+            <tr>
+                <th>Produtos</th>
+                <th>Estoque</th>
+                <th>Promoção</th>
+                <th>Preço</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#EasySearch.Each index=productIndex}}
+                <tr id="{{_id}}">
+                    <td>{{name}}</td>
+                    <td>{{estoque}}</td>
+                    <td>{{promotion}}</td>
+                    <td>{{m prince}}</td>
+                    <td><i class="editProduct azul zmdi zmdi-edit"></i></td>
+                    <td><i class="removeProduct red zmdi zmdi-close-circle"></i></td>
+                </tr>
+            {{/EasySearch.Each}}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <h2>Todos Os Produtos</h2>
+        <table class="table table-hover widget-bg-color-icon card-box">
+            <thead>
+            <tr>
+                <th>Produtos</th>
+                <th>Estoque</th>
+                <th>Promoção</th>
+                <th>Preço</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{# each allProducts}}
+                <tr id="{{_id}}">
+                    <td>{{name}}</td>
+                    <td>{{estoque}}</td>
+                    <td>{{promotion}}</td>
+                    <td>{{m prince}}</td>
+                    <td><i class="editProduct azul zmdi zmdi-edit"></i></td>
+                    <td><i class="removeProduct red zmdi zmdi-close-circle"></i></td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    {{> produtos}}
+    {{> sabores}}
+    {{> estoque}}
+
+</template>
+

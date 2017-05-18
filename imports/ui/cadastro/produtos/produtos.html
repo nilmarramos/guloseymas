@@ -1,0 +1,86 @@
+<template name="produtos">
+    <div id="modalProduto" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Cadastro de Produtos</h4>
+                </div>
+                <div class="modal-body modal-cart">
+                    <form id="formProduct">
+                        <input type="text" class="hidden" id="productId">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="product">produto</label>
+                                    <input id="product" class="form-control" type="text" required="" placeholder="produto">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="prince">Preço</label>
+                                    <input id="prince" class="form-control" type="text" required="" placeholder="preço">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="promotion">Promoção</label>
+                                    <select name="promotion" id="promotion" class="form-control">
+                                        <option value="nao">Não</option>
+                                        <option value="sim">Sim</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="category">Categoria</label>
+                                    <select name="category" id="category" class="form-control">
+                                        {{#each category}}
+                                            <option value="{{_id}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="estoque">Estoque</label>
+                                    <select name="estoque" id="estoque" class="form-control">
+                                        <option value="sim">Sim</option>
+                                        <option value="nao">Não</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="image">Url da Imagem</label>
+                                    <input id="image" class="form-control" type="text" required="" placeholder="imagem">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="description">Descrição</label>
+                                    <input id="description" class="form-control" type="text" required="" placeholder="descrição">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="add btn btn-info waves-effect waves-light">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

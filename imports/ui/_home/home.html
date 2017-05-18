@@ -1,0 +1,105 @@
+<template name="home">
+    <div class="row">
+        <div class="wrapper-container">
+            <div class="center">
+                <div class="welcome">
+
+                    <div class="clear"></div>
+                    <div class="welcome-bigText">
+                        <div class="pag">
+                            Aceitamos Cartões  <img src="/images/cartao.png" width="200" class="cartao img-responsive"><br>
+                        </div>
+
+                        {{#each text}}
+                            {{texto}}<br>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="home-itens">
+                    {{#each promotion}}
+                        <a href="">
+                            <div class="flag-one">Promoção da Semana</div>
+                            <div class="flag-two">{{m prince}}</div>
+                            <img src="{{image}}" class="big-item" data-toggle="modal" data-target="#{{_id}}">
+                        </a>
+
+                        <div class="modal fade modalProd" id="{{_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <img class="img-modal" src="{{image}}" alt="">
+                                        <div class="col-md-12 text-center">
+                                            <div class="form-group">
+                                                {{#each sabor}}
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="sabor" id="sabor" value="{{name}}"> {{name}}
+                                                    </label>
+                                                {{/each}}
+                                            </div>
+                                        </div>
+                                        <div class="description">
+                                            <h1 class="desc-title">{{name}}</h1>
+                                            <div class="desc-prince">{{m prince}}</div>
+                                            <div class="desc-desc text-center">
+                                                {{description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        {{#if currentUser}}
+                                            <label for="qts">Quantidade</label>
+                                            <input type="number" id="qts" class="qts" min="1" data-binding='qty'>
+                                                <button type="submit" class="btn btn-danger addCart" {{chave}} >Comprar</button>
+                                        {{else}}
+                                            <button type="button" class="btn btn-danger login" data-toggle="modal" data-target="#login">Logar/Cadastrar</button>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+
+                    {{#each destaques}}
+                        <a href=""><img src="{{image}}" class="small-item" data-toggle="modal" data-target="#{{_id}}"></a>
+
+                        <div class="modal fade modalProd" id="{{_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <img class="img-modal" src="{{image}}" alt="">
+                                        <div class="col-md-12 text-center">
+                                            <div class="form-group">
+                                                {{#each sabor}}
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="sabor" id="sabor" value="{{name}}"> {{name}}
+                                                    </label>
+                                                {{/each}}
+                                            </div>
+                                        </div>
+                                        <div class="description">
+                                            <h1 class="desc-title">{{name}}</h1>
+                                            <div class="desc-prince">{{m prince}}</div>
+                                            <div class="desc-desc text-center">
+                                                {{description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        {{#if currentUser}}
+                                            <label for="qts">Quantidade</label>
+                                            <input type="number" id="qts" class="qts" min="1" data-binding='qty'>
+                                                <button type="submit" class="btn btn-danger addCart" {{chave}} >Comprar</button>
+                                        {{else}}
+                                            <button type="button" class="btn btn-danger login" data-toggle="modal" data-target="#login">Logar/Cadastrar</button>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

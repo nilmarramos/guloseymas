@@ -1,0 +1,67 @@
+<template name="menu">
+    <div class="row">
+        <div class="wrapper-container-small">
+            <div class="center">
+                <div class="row text-center">
+                    <div class="col-md-4 search" >
+                        <div class="form-group">
+                            <label for="category">Selecione a Categoria</label>
+                            <select name="category" id="category" class="form-control">
+                                {{#each category}}
+                                    <option value="{{_id}}">{{name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-itens">
+
+                    {{#each produtos}}
+                        <div class="col-sm-4">
+                            <div class="flag-prince">{{m prince}}</div>
+                            <img src="{{image}}" class="img-responsive"  data-toggle="modal" data-target="#{{_id}}">
+                        </div>
+
+                        <div class="modal fade modalProd" id="{{_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <img src="{{image}}" alt="">
+                                        <div class="col-md-12 text-center">
+                                            <div class="form-group">
+                                                {{#each sabor}}
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="sabor" id="sabor" value="{{name}}"> {{name}}
+                                                </label>
+                                                {{/each}}
+                                            </div>
+                                        </div>
+                                        <div class="description">
+                                            <h1 class="desc-title">{{name}}</h1>
+                                            <div class="desc-prince">{{m prince}}</div>
+                                            <div class="desc-desc text-center">
+                                                {{description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <form id="quantity">
+                                        <div class="modal-footer">
+                                            {{#if currentUser}}
+                                                <label for="qts">Quantidade</label>
+                                                <input type="number" id="qts" name="qts" class="qts" min="1" data-binding='qty' required="required">
+                                                    <button type="submit" class="btn btn-danger addCart">Comprar</button>
+                                            {{else}}
+                                                <button type="button" class="btn btn-danger login" data-toggle="modal" data-target="#login">Logar/Cadastrar</button>
+                                            {{/if}}
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

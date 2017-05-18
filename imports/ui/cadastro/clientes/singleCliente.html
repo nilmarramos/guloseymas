@@ -1,0 +1,27 @@
+<template name="singleCliente">
+    <div class="row">
+        <div class="container-fluid card-box center">
+            <div class="col-sm-12">
+                <div class="row">
+                    {{#each cliente}}
+                        <header class="text-center">
+                            <h1 class="header-pedido">{{ profile.name}}</h1>
+                        </header>
+                    {{/each}}
+                </div>
+                {{#each cliente}}
+                    <div class="row">
+                        <div class="text-center">
+                            <div class="profile-order">
+                                <span class="order">Telefone:</span> {{ profile.tell}}<br>
+                                <span class="order">Endereço:</span> {{ profile.endereco }}-{{ profile.numero }} &ensp; <span class="order">Cep:</span> {{ profile.cep}}<br>
+                                <span class="order">Complemento:</span> {{ profile.compl}}<br>
+                                <span class="order">Bairro:</span> {{ profile.bairro}}<br>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>

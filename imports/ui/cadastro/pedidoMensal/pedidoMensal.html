@@ -1,0 +1,25 @@
+<template name="pedidoMensal">
+    <div class="row">
+        <table class="table table-hover widget-bg-color-icon card-box">
+            <thead>
+            <tr>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Excluir</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each pedido}}
+                <tr>
+                    <td>{{m valorPedido}}</td>
+                    <td>{{formatDate}}</td>
+                    <td><i class="removeMensal red zmdi zmdi-close-circle"></i></td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        <div class="total text-center">
+            Total :{{ m totalMensal}}
+        </div>
+    </div>
+</template>

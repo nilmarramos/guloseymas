@@ -1,0 +1,80 @@
+<template name="categoria">
+
+    <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="widget-bg-color-icon card-box">
+            <a href="#">
+                <div class="modalCategory bg-icon bg-icon-pink pull-left">
+                    <i class="ion-plus text-pink"></i>
+                </div>
+            </a>
+            <div class="text-right">
+                <h3 class="text-dark"><b class="counter">{{countCategory}}</b></h3>
+                <p class="text-muted">Categorias</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="widget-bg-color-icon card-box">
+            <a href="#">
+                <div class="modalTexto bg-icon bg-icon-pink pull-left">
+                    <i class="ion-plus text-pink"></i>
+                </div>
+            </a>
+            <div class="text-right">
+                <h3 class="text-dark"><b class="counter"></b></h3>
+                <p class="text-muted">Texto Da Home</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-hover widget-bg-color-icon card-box">
+            <thead>
+            <tr>
+                <th>Texto da Home</th>
+                <th>Imprimir</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each text}}
+                <tr id="{{_id}}">
+                    <td>{{texto}}</td>
+                    <td>{{imprimir}}</td>
+                    <td><i class="edit-texto azul zmdi zmdi-edit"></i></td>
+                    <td><i class="removeTexto red zmdi zmdi-close-circle"></i></td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <table class="table table-hover widget-bg-color-icon card-box">
+            <thead>
+            <tr>
+                <th>Categoria</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each category}}
+                <tr id="{{_id}}">
+                    <td>{{name}}</td>
+                    <td><i class="edit-Category azul zmdi zmdi-edit"></i></td>
+                    <td><i class="removeCategory red zmdi zmdi-close-circle"></i></td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    {{> modalCategory}}
+    {{> modalTexto}}
+
+</template>

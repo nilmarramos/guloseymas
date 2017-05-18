@@ -1,0 +1,25 @@
+<template name="pedidos">
+
+    <div class="row">
+        <table class="table table-hover widget-bg-color-icon card-box">
+            <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Data</th>
+                <th>Total</th>
+                <th>Fechar</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each order}}
+                <tr>
+                    <td class="verOrder">{{user}}</td>
+                    <td>{{formatDate}}</td>
+                    <td>{{m total}}</td>
+                    <td><i class="removePedido verde zmdi zmdi-check"></i></td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

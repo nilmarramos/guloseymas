@@ -1,0 +1,40 @@
+<template name="modalTexto">
+    <div id="modalTexto" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Cadastro Texto</h4>
+                </div>
+                <div class="modal-body modal-cart">
+                    <form id="formTexto">
+                        <input type="text" class="hidden" id="textoId">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="texto">Texto</label>
+                                    <input id="texto" class="form-control" type="text" required="required" placeholder="texto">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="imprimir">Colocar no Site</label>
+                                    <select name="imprimir" id="imprimir" class="form-control">
+                                        <option value="sim">Sim</option>
+                                        <option value="nao">Não</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="addTexto btn btn-info waves-effect waves-light">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

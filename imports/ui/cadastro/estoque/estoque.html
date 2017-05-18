@@ -1,0 +1,31 @@
+<template name="estoque">
+    <div id="modalEstoque" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Estoque</h4>
+                </div>
+                <table class="table table-hover widget-bg-color-icon card-box">
+                    <thead>
+                    <tr>
+                        <th>Sabor</th>
+                        <th>Estoque</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each prodEstoque}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>{{estoque}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

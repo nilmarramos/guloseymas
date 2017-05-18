@@ -1,0 +1,34 @@
+<template name="cliente">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="widget-bg-color-icon card-box">
+                <div class="text-center">
+                    <h3 class="text-dark"><b class="counter">{{count}}</b></h3>
+                    <p class="text-muted">Clientes</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-hover widget-bg-color-icon card-box">
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Excluir</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each clientes}}
+                <tr>
+                    <td class="verUser">{{profile.name}}</td>
+                    <td>{{profile.endereco}}</td>
+                    <td><i class="removeCliente red zmdi zmdi-close-circle"></i></td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

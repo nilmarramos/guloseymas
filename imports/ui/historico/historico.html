@@ -1,0 +1,28 @@
+<template name="historico">
+    <div class="row">
+        <div class="container-fluid card-box center">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="table table-striped">
+                        <table class="table table-responsive">
+                            <thead>
+                            <tr>
+                                <th class="red">Os 3 Últimos Pedidos</th>
+                                <th class="red">Ver</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#each historico}}
+                                <tr>
+                                    <td>{{formatDate}}</td>
+                                    <td><i class="verHistorico red zmdi zmdi-eye"></i></td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

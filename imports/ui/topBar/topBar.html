@@ -1,0 +1,47 @@
+<template name="topBar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand nome" href="/cart"><i class=" red zmdi zmdi-shopping-cart-plus"></i> Carrinho</a>
+                <a class="navbar-brand nome" href="/menu"> Produtos</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav hidden-xs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/menu">Produtos</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="hidden-xs" href="/cart"><i class="red zmdi zmdi-shopping-cart-plus hi"></i> Carrinho</a></li>
+                    {{#if currentUser}}
+                        <li><a href="/historico">Historico</a></li>
+                        {{else}}
+                        <li><a href="#" class="cadastro">Cadastrar</a></li>
+                    {{/if}}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                           role="button" aria-haspopup="true" aria-expanded="false">
+                                {{#if currentUser}}
+                                    {{currentUser.profile.name}}
+                                 {{else}}
+                                    Entrar
+                                {{/if}}
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            {{#if currentUser}}
+                                <li><a href="#" class="right-sair">Sair</a></li>
+                            {{else}}
+                                <li><a href="#" class="right-login">Login</a></li>
+                            {{/if}}
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+</template>
